@@ -1,8 +1,9 @@
-version: '3.6'
+version: '3.5'
 
 services:
 
   updater:
-    image: docker.lab.com/gitlab-group-variable-update:1.0.0
+    image: waitingsong/gitlab-variable-helper:latest
     volumes:
      - ./settings.json:/app/settings.json
+

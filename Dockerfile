@@ -1,13 +1,14 @@
-FROM node:12.7.0-alpine
+FROM waitingsong/node:alpine
 
-LABEL MAINTAINER="soulteary"
+LABEL MAINTAINER="waiting"
 
 COPY ./src /app
 
 WORKDIR /app
 
-RUN npm i --production
+RUN npm i --prod
 
 VOLUME [ "/app/settings.json" ]
 
 ENTRYPOINT [ "npm", "start" ]
+

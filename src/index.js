@@ -20,7 +20,7 @@ function combine(varList) {
 function update(itemIds, varsData, type) {
     type = type.slice(-1) === 's' ? type.slice(0, -1) : type;
     const apiType = `${type}s`;
-    itemIds.forEach(async (itemId) => {
+    itemIds && itemIds.forEach(async (itemId) => {
         try {
             var { data: variablesExists } = await instance.get(`${baseHost}/${apiType}/${itemId}/variables`, options);
         } catch (error) {
@@ -65,3 +65,4 @@ const projectVarsList = combine(projectVars);
 
 update(groupIds, groupsVarsList, 'group');
 update(projectIds, projectVarsList, 'project');
+
